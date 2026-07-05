@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
      NOTE: Adjust START_DATE's year below if needed — it's set to the most
      recent October 23 for a clean, ever-growing counter.
      ---------------------------------------------------------------------- */
-  const START_DATE = new Date(2024, 9, 23, 0, 0, 0); // month is 0-indexed: 9 = October
+  const START_DATE = new Date(2025, 10, 23, 0, 0, 0); // month is 0-indexed: 9 = October
 
   const el = {
     years: document.getElementById('t-years'),
