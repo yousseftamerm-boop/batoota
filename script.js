@@ -279,3 +279,54 @@ Youssef ❤️`;
   });
 
 });
+function showForgiveness() {
+    const message = document.getElementById("forgivenessMessage");
+    const button = document.querySelector(".forgive-btn");
+
+    message.classList.add("show");
+
+    button.innerHTML = "Thank you for hearing my heart ❤️";
+
+    createApologyHearts();
+}
+
+function createApologyHearts() {
+    for (let i = 0; i < 20; i++) {
+        const heart = document.createElement("div");
+
+        heart.innerHTML = "❤️";
+
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "-30px";
+        heart.style.fontSize = (15 + Math.random() * 25) + "px";
+        heart.style.zIndex = "9999";
+        heart.style.pointerEvents = "none";
+
+        document.body.appendChild(heart);
+
+        const duration = 3 + Math.random() * 3;
+
+        heart.animate(
+            [
+                {
+                    transform: "translateY(0) scale(1)",
+                    opacity: 1
+                },
+                {
+                    transform:
+                        `translateY(-${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg) scale(0.5)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration: duration * 1000,
+                easing: "ease-out"
+            }
+        );
+
+        setTimeout(() => {
+            heart.remove();
+        }, duration * 1000);
+    }
+}
