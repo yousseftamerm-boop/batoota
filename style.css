@@ -550,3 +550,233 @@ body{
   .btn-primary{ padding: 0.9rem 1.6rem; font-size: 0.88rem; }
   .section{ padding: 4rem 1.1rem; }
 }
+/* ============================= */
+/* ROMANTIC APOLOGY SECTION */
+/* ============================= */
+
+.apology-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        #fff0f3,
+        #ffe1e8,
+        #fff5f7
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.apology-section::before,
+.apology-section::after {
+    content: "♥";
+    position: absolute;
+    font-size: 120px;
+    color: rgba(255, 105, 135, 0.08);
+    animation: floatingHeart 6s ease-in-out infinite;
+}
+
+.apology-section::before {
+    left: 5%;
+    top: 15%;
+}
+
+.apology-section::after {
+    right: 5%;
+    bottom: 15%;
+    animation-delay: 2s;
+}
+
+.apology-card {
+    width: 90%;
+    max-width: 750px;
+    padding: 55px 45px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.82);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(150, 50, 80, 0.15);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+    animation: apologyAppear 1.2s ease;
+}
+
+.broken-heart {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: heartbeat 2s infinite;
+}
+
+.apology-small {
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a85c70;
+    margin-bottom: 12px;
+}
+
+.apology-card h2 {
+    font-size: 42px;
+    color: #8f304b;
+    margin-bottom: 30px;
+    font-family: Georgia, serif;
+}
+
+.apology-text {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #4f3038;
+    text-align: left;
+}
+
+.apology-text strong {
+    display: block;
+    margin-top: 20px;
+    color: #8f304b;
+    font-weight: 600;
+}
+
+.apology-divider {
+    margin: 35px 0;
+    font-size: 25px;
+    color: #d65b78;
+    letter-spacing: 10px;
+}
+
+.promise {
+    font-size: 18px;
+    line-height: 1.8;
+    font-style: italic;
+    color: #70434e;
+    margin-bottom: 30px;
+}
+
+.forgive-btn {
+    border: none;
+    padding: 16px 30px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #d84d6b, #a92f4c);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(169, 47, 76, 0.25);
+    transition: all 0.3s ease;
+}
+
+.forgive-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(169, 47, 76, 0.35);
+}
+
+.forgiveness-message {
+    display: none;
+    margin-top: 35px;
+    animation: messageAppear 1s ease;
+}
+
+.forgiveness-message.show {
+    display: block;
+}
+
+.big-heart {
+    font-size: 70px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.forgiveness-message h3 {
+    font-size: 28px;
+    color: #8f304b;
+    margin: 15px 0;
+}
+
+.forgiveness-message p {
+    color: #70434e;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.forgiveness-message span {
+    display: block;
+    margin-top: 20px;
+    font-family: cursive;
+    font-size: 20px;
+    color: #a92f4c;
+}
+
+
+/* Animations */
+
+@keyframes apologyAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes floatingHeart {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(10deg);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .apology-card {
+        padding: 40px 25px;
+    }
+
+    .apology-card h2 {
+        font-size: 31px;
+    }
+
+    .apology-text {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .promise {
+        font-size: 16px;
+    }
+
+    .forgive-btn {
+        font-size: 15px;
+        padding: 14px 22px;
+    }
+}
